@@ -1,0 +1,17 @@
+<head>
+  {{ content_for_header }}
+</head>
+
+<body>
+  <main
+    id="MainContent"
+    class="content-for-layout focus-none"
+    role="main"
+    tabindex="-1">
+    {{ content_for_layout }}
+  </main>
+
+  {% if settings.enable_3d_model %}
+    <script type="module" src="{{ '3d-model.js' | asset_url }}"></script>
+  {% endif %}
+</body>

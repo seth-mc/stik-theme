@@ -23,7 +23,7 @@ function init() {
   // Load a glTF resource
   loader.load(
     // resource URL
-    './assets/stikpack.glb',
+    './stikpack.glb',
     // called when the resource is loaded
     function ( gltf ) {
     // get the loaded model
@@ -31,7 +31,7 @@ function init() {
 
     model.position.set(0, 0, 0);
     model.rotation.set(0, 0, 0);
-    model.scale.set(1, 1, 1);
+    model.scale.set(5, 5, 5);
 
     // add the model to the scene
     scene.add( model );
@@ -46,11 +46,6 @@ function init() {
     }
 );
 
-
-  const geometry = new THREE.BoxGeometry();
-  const material = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
-  model  = new THREE.Mesh(geometry, material);
-  scene.add(model);
 
   // Add lights
   const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);

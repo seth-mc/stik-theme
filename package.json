@@ -28,6 +28,7 @@
     "babel-cli": "^6.26.0",
     "babel-preset-minify": "^0.5.2",
     "babel-preset-react-app": "^10.0.1",
+    "file-loader": "^6.2.0",
     "three": "^0.150.1"
   },
   "devDependencies": {

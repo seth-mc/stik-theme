@@ -4,6 +4,7 @@
   "description": "My webpack project",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack-dev-server --mode=development --config=./webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "babelwatch": "npx babel --watch src --out-dir ./assets --presets react-app/prod",
     "build": "webpack --mode=production --node-env=production",

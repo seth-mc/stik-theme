@@ -6,8 +6,12 @@
     <title>{{ shop.name }} | {{ page.title }}</title>
     {{ 'main.css' | asset_url | stylesheet_tag }}
     {{ 'main.js' | asset_url | script_tag }}
+    <link rel="stylesheet" href="{{ 'tailwindcss/base.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'tailwindcss/utilities.css' | asset_url }}">
+
   </head>
   <body>
+    {% section 'scrolling-index' %}
     <header>
       {{ content_for_header }}
     </header>

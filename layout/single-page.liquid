@@ -4,14 +4,15 @@
 </head>
 
 <body>
-  <main
-    id="MainContent"
-    class="content-for-layout focus-none"
-    role="main"
-    tabindex="-1">
-    {{ content_for_layout }}
-  </main>
-
+  <div class="bg-gray-100 p-4">
+    <main
+      id="MainContent"
+      class="content-for-layout focus-none"
+      role="main"
+      tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+  </div>
   {% if settings.enable_3d_model %}
     <script type="module" src="{{ '3d-model.js' | asset_url }}"></script>
   {% endif %}

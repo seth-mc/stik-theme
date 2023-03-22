@@ -7,10 +7,12 @@
   src: url("https://assets.codepen.io/6932556/coolvetica+rg.woff") format("woff");
 }
 
-* {
+.build {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
+  font-family: "Coolvetica"
 }
 
 ::-moz-selection {
@@ -23,28 +25,24 @@
   color: white;
 }
 
-body {
-  overflow: hidden;
-  font-family: "Coolvetica"
-}
   
 
 h1 {font-size: 5rem}
 
 h2 { font-size: 2rem }
 
-img {
+.stik-img {
   width: 100%;
   height: auto;
   background: #f0f0f0;
 }
 
-ul {
+.ul-element {
   padding-left: 1rem;
   list-style: none;
 }
 
-li {
+.li-element {
   flex-shrink: 0;
   width: clamp(500px, 60vw, 800px);
   padding-right: 1rem;

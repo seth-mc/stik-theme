@@ -2,67 +2,178 @@
 {% assign h = 874 %}
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ shop.name }} | {{ page.title }}</title>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {%- endif -%}
+
+    {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
+      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    {%- endunless -%}
+
+    <title>
+      {{ page_title }}
+      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+
+    {% render 'meta-tags' %}
+
+    <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    {{ content_for_header }}
+
+    {%- liquid
+      assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
+      assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
+      assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
+    %}
+
   {{ content_for_header }}
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+  {{ 'scroll-handler.js' | asset_url | script_tag }}
   {{ 'scrolling-style.css' | asset_url | stylesheet_tag }}
+  {{ 'base.css' | asset_url | stylesheet_tag }}
 </head>
 
 <body>
-  <div class="loader df aic jcc">
-    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
-    {{ 'scroll-handler.js' | asset_url | script_tag }}
-    <div>
-      <h1>Loading</h1>
-      <h2 class="loader--text">0%</h2>
-    </div>
+  <div class='loader df aic jcc'>
+  <div>
+    <h1>Loading</h1>
+    <h2 class='loader--text'>0%</h2>
   </div>
-
-  <div class="demo-wrapper">
-    <header class="df aic jcc">
-      <div>
-        <h1>stikbalm</h1>
-        <h2>demo</h2>
+</div>
+<div class='demo-wrapper'>
+  <header class='df aic jcc'>
+    <div>
+      <h1>stik/</h1>
+    </div>
+  </header>
+  <section class='demo-text'>
+    <div class='wrapper text'>
+      BUYNOWBUYNOWBUYNOWBUYNOW
+    </div>
+  </section>
+  <section class='demo-gallery'>
+    <ul class='wrapper'>
+      <li>
+        <img src=''>
+      </li>
+      <li>
+        <img src='https://stikbalm.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc22546b7-5cc2-497e-8d34-aff0640cb614%2FE9344019-AAE2-43E9-AF09-81AE182282D4.jpg?id=a4494a2c-8b1e-4aba-a124-67d0d5e71164&amp;table=block&amp;spaceId=67c1c07b-6e54-49ea-a854-55125e7fbaf6&amp;width=2000&amp;userId=&amp;cache=v2'>
+      </li>
+      <li>
+        <img src='https://stikbalm.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0092ddb6-6909-4d09-a245-f4574a98ce44%2F1183EE11-BA40-45F2-88C1-3C772FB01F56.jpg?id=7207cb71-4fed-44b2-9900-4016d7fdb270&amp;table=block&amp;spaceId=67c1c07b-6e54-49ea-a854-55125e7fbaf6&amp;width=2000&amp;userId=&amp;cache=v2'>
+      </li>
+      <li>
+        <img src='https://stikbalm.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F78d186ac-b725-49fc-81f8-a74220ebb2b2%2FE9D2CD7D-320B-49F0-8BBC-823966D6C2CC.jpg?id=66a13034-92f6-4a34-92f7-4de505f3bfbc&amp;table=block&amp;spaceId=67c1c07b-6e54-49ea-a854-55125e7fbaf6&amp;width=2000&amp;userId=&amp;cache=v2'>
+      </li>
+    </ul>
+  </section>
+  <section class='container hero'>
+    <div class='hero__inner'>
+      <div class='hero__images'></div>
+      <img class='hero__image' src='https://stikbalm.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1e64f93f-5f3f-4cff-b654-16f3eb54b34b%2FCC5D5515-7BA1-4751-8791-CA59EEAB8AC6_2.jpg?id=26226694-5be2-41a1-a8af-fb5a180266cd&amp;table=block&amp;spaceId=67c1c07b-6e54-49ea-a854-55125e7fbaf6&amp;width=2000&amp;userId=&amp;cache=v2'>
+      <div class='hero__content'>
+        <div class='hero__headline'>
+          <h1>the world's best balm just got better.</h1>
+        </div>
       </div>
-    </header>
+    </div>
+  </section>
+  <section class='demo-gallery'>
+    <ul class='wrapper'>
+      <li>
+        <img src='https://stikbalm.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1e64f93f-5f3f-4cff-b654-16f3eb54b34b%2FCC5D5515-7BA1-4751-8791-CA59EEAB8AC6_2.jpg?id=26226694-5be2-41a1-a8af-fb5a180266cd&amp;table=block&amp;spaceId=67c1c07b-6e54-49ea-a854-55125e7fbaf6&amp;width=2000&amp;userId=&amp;cache=v2'>
+      </li>
+      <li>
+        <img src='https://stikbalm.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa70e6cd5-029a-4e47-ab89-067c1205a473%2FIMG_6191.jpg?id=c7a7cb43-1e21-46cf-89f3-a96c746366db&amp;table=block&amp;spaceId=67c1c07b-6e54-49ea-a854-55125e7fbaf6&amp;width=2000&amp;userId=&amp;cache=v2'>
+      </li>
+      <li>
+        <img src='https://stikbalm.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe326392c-bfb5-464a-8eaf-eba8e266727f%2FF7339F7D-C53A-4818-9018-46545679FE43.jpg?id=7b2ceb7c-02e2-4d1e-851f-aa551f835591&amp;table=block&amp;spaceId=67c1c07b-6e54-49ea-a854-55125e7fbaf6&amp;width=2000&amp;userId=&amp;cache=v2'>
+      </li>
+    </ul>
+  </section>
+  <section class='demo-text'>
+    <div class='wrapper text'>
+      BUYNOWBUYNOWBUYNOWBUYNOW
+    </div>
+  </section>
+  <footer class='df aic jcc'>
+    <p><a href="mailto:stilbalm.info@gmail.com">stikbalm.info@gmail.com</a></p>
+  </footer>
+</div>
 
-    <section class="demo-text">
-      <div class="wrapper text">
-        BUY NOW   BUY NOW
-      </div>
-    </section>
+<body class="gradient">
+    <a class="skip-to-content-link button visually-hidden" href="#MainContent">
+      {{ "accessibility.skip_to_text" | t }}
+    </a>
 
-    {% for i in (1..4) %}
-      <section class="demo-gallery">
-        <ul class="wrapper">
-          {% for j in (1..4) %}
-            <li>
-              <img
-                src="https://source.unsplash.com/random/{{ w }}x{{ h }}?sig={{ j }}"
-                width="{{ w }}"
-                height="{{ h }}" />
-            </li>
-          {% endfor %}
-        </ul>
-      </section>
-    {% endfor %}
+    {%- if settings.cart_type == 'drawer' -%}
+      {%- render 'cart-drawer' -%}
+    {%- endif -%}
 
-    <section class="demo-text">
-      <div class="wrapper text">
-        BUY NOW   BUY NOW
-      </div>
-    </section>
+    {% sections 'header-group' %}
 
-    <footer class="df aic jcc">
-      <p>Images from
-        <a href="https://unsplash.com/">Unsplash</a>
-      </p>
-    </footer>
+    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
 
-    {{ content_for_layout }}
+    {% sections 'footer-group' %}
 
+    <ul hidden>
+      <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
+      <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
+    </ul>
+
+    <script>
+      window.shopUrl = '{{ request.origin }}';
+      window.routes = {
+        cart_add_url: '{{ routes.cart_add_url }}',
+        cart_change_url: '{{ routes.cart_change_url }}',
+        cart_update_url: '{{ routes.cart_update_url }}',
+        cart_url: '{{ routes.cart_url }}',
+        predictive_search_url: '{{ routes.predictive_search_url }}'
+      };
+
+      window.cartStrings = {
+        error: `{{ 'sections.cart.cart_error' | t }}`,
+        quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`
+      }
+
+      window.variantStrings = {
+        addToCart: `{{ 'products.product.add_to_cart' | t }}`,
+        soldOut: `{{ 'products.product.sold_out' | t }}`,
+        unavailable: `{{ 'products.product.unavailable' | t }}`,
+        unavailable_with_option: `{{ 'products.product.value_unavailable' | t: option_value: '[value]' }}`,
+      }
+
+      window.accessibilityStrings = {
+        imageAvailable: `{{ 'products.product.media.image_available' | t: index: '[index]' }}`,
+        shareSuccess: `{{ 'general.share.success_message' | t }}`,
+        pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
+        playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
+      }
+    </script>
+
+    {%- if settings.predictive_search_enabled -%}
+      <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
   </body>
+
+
 </body>

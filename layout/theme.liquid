@@ -47,7 +47,8 @@
   {{ 'base.css' | asset_url | stylesheet_tag }}
 </head>
 
-<body>
+<body class="gradient">
+<div class="build">
   <div class='loader df aic jcc'>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
@@ -118,8 +119,9 @@
     <p><a href="mailto:stilbalm.info@gmail.com">stikbalm.info@gmail.com</a></p>
   </footer>
 </div>
+</div>
 
-<body class="gradient">
+
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
@@ -174,7 +176,7 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-  </body>
+
 
 
 </body>

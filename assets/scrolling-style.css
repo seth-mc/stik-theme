@@ -65,7 +65,8 @@ footer {height: 50vh}
 
 .loader {
   position: fixed;
-  
+  background: black;
+  color: white;
   top: 0;
   left: 0;
   right: 0;

@@ -45,7 +45,7 @@
   {{ 'base.css' | asset_url | stylesheet_tag }}
 </head>
 
-<body>
+<body class="gradient">
   <div class="build">
         <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
         <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
@@ -115,8 +115,8 @@
         </section>
       </div>
   </div>
-</body>
-<body class="gradient">
+
+
     
 
     {%- if settings.cart_type == 'drawer' -%}

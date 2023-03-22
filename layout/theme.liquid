@@ -90,7 +90,9 @@
             <img class='hero__image' src='https://stikbalm.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1e64f93f-5f3f-4cff-b654-16f3eb54b34b%2FCC5D5515-7BA1-4751-8791-CA59EEAB8AC6_2.jpg?id=26226694-5be2-41a1-a8af-fb5a180266cd&amp;table=block&amp;spaceId=67c1c07b-6e54-49ea-a854-55125e7fbaf6&amp;width=2000&amp;userId=&amp;cache=v2'>
             <div class='hero__content'>
               <div class='hero__headline'>
-                <h1>the world's best balm just got better.</h1>
+                <a class="skip-to-content-link button visually-hidden" href="#MainContent">
+                  <h1>{{ "accessibility.skip_to_text" | t }}</h1>
+    </a>
               </div>
             </div>
           </div>
@@ -117,9 +119,7 @@
   </div>
 
 
-    <a class="skip-to-content-link button visually-hidden" href="#MainContent">
-      {{ "accessibility.skip_to_text" | t }}
-    </a>
+    
 
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'cart-drawer' -%}

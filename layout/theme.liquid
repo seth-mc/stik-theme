@@ -42,16 +42,17 @@
     %}
 
   {{ content_for_header }}
-  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
-  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
-  {{ 'scroll-handler.js' | asset_url | script_tag }}
+  
   {{ 'scrolling-style.css' | asset_url | stylesheet_tag }}
   
 </head>
 
 <body>
   <div class='loader df aic jcc'>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+    {{ 'scroll-handler.js' | asset_url | script_tag }}
   <div>
     <h1>Loading</h1>
     <h2 class='loader--text'>0%</h2>

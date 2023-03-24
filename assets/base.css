@@ -309,7 +309,7 @@ html.no-js .no-js-hidden {
   }
 }
 
-body,
+.content-for-layout,
 .color-background-1,
 .color-background-2,
 .color-inverse,
@@ -400,11 +400,11 @@ body,
   font-weight: var(--font-body-weight);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
+.content-for-layout h1,
+.content-for-layout h2,
+.content-for-layout h3,
+.content-for-layout h4,
+.content-for-layout h5,
 .h0,
 .h1,
 .h2,
@@ -820,12 +820,12 @@ summary::-webkit-details-marker {
   Focus ring - default (with offset)
 */
 
-*:focus {
+.content-for-layout:focus {
   outline: 0;
   box-shadow: none;
 }
 
-*:focus-visible {
+.content-for-layout:focus-visible {
   outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: 0.3rem;
   box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
@@ -834,7 +834,7 @@ summary::-webkit-details-marker {
 
 /* Fallback - for browsers that don't support :focus-visible, a fallback is set for :focus */
 .focused,
-.no-js *:focus {
+.no-js .content-for-layout:focus {
   outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: 0.3rem;
   box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
@@ -842,7 +842,7 @@ summary::-webkit-details-marker {
 }
 
 /* Negate the fallback side-effect for browsers that support :focus-visible */
-.no-js *:focus:not(:focus-visible) {
+.no-js .content-for-layout:focus:not(:focus-visible) {
   outline: 0;
   box-shadow: none;
 }

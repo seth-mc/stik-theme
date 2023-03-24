@@ -842,7 +842,7 @@ summary::-webkit-details-marker {
 }
 
 /* Negate the fallback side-effect for browsers that support :focus-visible */
-.no-js .content-for-layout:focus:not(:focus-visible) {
+.no-js *:focus:not(:focus-visible) {
   outline: 0;
   box-shadow: none;
 }

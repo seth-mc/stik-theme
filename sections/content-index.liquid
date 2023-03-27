@@ -4,7 +4,7 @@
       $(document).ready(function() {
 
 // Load the dependencies
-        var dependencies = ['https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js', '{{ 'scroll-handler.js' | asset_url }}'];
+        var dependencies = ['https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js'];
 
 // Load each dependency and run your custom script
         function loadDependency(index) {
@@ -22,6 +22,7 @@
         loadDependency(0);
       });
     </script>
+    {{ 'scroll-handler.js' | asset_url }}
   {% endif %}
 
   {% schema %}

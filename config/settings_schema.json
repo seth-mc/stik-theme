@@ -11,12 +11,6 @@
     "name": "t:settings_schema.logo.name",
     "settings": [
       {
-        "type": "checkbox",
-        "id": "script_enabled",
-        "label": "enable script",
-        "default": true
-      },
-      {
         "type": "image_picker",
         "id": "logo",
         "label": "t:settings_schema.logo.settings.logo_image.label"
@@ -1561,6 +1555,23 @@
         "id": "cart_drawer_collection",
         "label": "t:settings_schema.cart.settings.cart_drawer.collection.label",
         "info": "t:settings_schema.cart.settings.cart_drawer.collection.info"
+      }
+    ]
+  },
+  {
+    "name": "section pages",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "script_enabled",
+        "label": "enable script",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "script_text",
+        "label": "script text",
+        "default": "hello from schema"
       }
     ]
   }

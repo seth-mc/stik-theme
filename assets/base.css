@@ -3,8 +3,6 @@
 :root,
 .color-background-1 {
   --color-foreground: var(--color-base-text);
-  --color-background: var(--color-base-background-1);
-  --gradient-background: var(--gradient-base-background-1);
 }
 
 .color-background-2 {
@@ -307,19 +305,6 @@ html.no-js .no-js-hidden {
   .element-margin {
     margin-top: calc(5rem + var(--page-width-margin));
   }
-}
-
-.content-for-layout .color-background-1,
-.content-for-layout .color-background-2,
-.content-for-layout .color-inverse,
-.content-for-layout .color-accent-1,
-.content-for-layout .color-accent-2 {
-  color: rgba(var(--color-foreground), 0.75);
-  background-color: rgb(var(--color-background));
-}
-
-.content-for-layout .background-secondary {
-  background-color: rgba(var(--color-foreground), 0.04);
 }
 
 .grid-auto-flow {

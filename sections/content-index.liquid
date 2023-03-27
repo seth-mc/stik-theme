@@ -1,49 +1,4 @@
 <div class="build">
-  {% if section.settings.script_enabled %}
-    <script>
-      $(document).ready(function() {
-
-// Load the dependencies
-        var dependencies = ['https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js'];
-
-// Load each dependency and run your custom script
-        function loadDependency(index) {
-          if (index < dependencies.length) {
-            $.getScript(dependencies[index], function() {
-              loadDependency(index + 1);
-            });
-          } else {
-            console.log('{{ section.settings.script_text }}');
-
-// Add your custom script code here, or call a function from 'scroll-handler.js'
-          }
-        }
-
-        loadDependency(0);
-      });
-    </script>
-    {{ 'scroll-handler.js' | asset_url }}
-  {% endif %}
-
-  {% schema %}
-    {
-      "name": "section pages",
-      "settings": [
-        {
-          "type": "checkbox",
-          "id": "script_enabled",
-          "label": "enable script",
-          "default": true
-        }, {
-          "type": "text",
-          "id": "script_text",
-          "label": "script text",
-          "default": "hello from schema"
-        }
-      ]
-    }
-  {% endschema %}
-
 
   <div style="display:none;" class='loader df aic jcc'>
     <div>

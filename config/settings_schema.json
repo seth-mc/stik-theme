@@ -11,6 +11,12 @@
     "name": "t:settings_schema.logo.name",
     "settings": [
       {
+        "type": "checkbox",
+        "id": "script_enabled",
+        "label": "enable script",
+        "default": true
+      },
+      {
         "type": "image_picker",
         "id": "logo",
         "label": "t:settings_schema.logo.settings.logo_image.label"

@@ -11,6 +11,24 @@
     {{ 'scroll-handler.js' | asset_url | script_tag }}
   {% endif %}
 
+  {% schema %}
+    {
+      "name": "section pages",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "script_enabled",
+          "label": "enable script",
+          "default": true
+        }, {
+          "type": "text",
+          "id": "script_text",
+          "label": "script text",
+          "default": "hello from schema"
+        }
+      ]
+    }
+  {% endschema %}
   <div style="display:none;" class='loader df aic jcc'>
     <div>
       <h1>Loading</h1>

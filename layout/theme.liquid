@@ -365,6 +365,15 @@
         px;
         --variant-pills-shadow-blur-radius: {{ settings.variant_pills_shadow_blur }}
         px;
+
+        .custom-container {
+          position: relative;
+          grid-row: 1 / -1;
+          grid-column: 1;
+          z-index: 1;
+          height: 100vh;
+          overflow: auto;
+        }
       }
     {% endstyle %}
 
@@ -402,6 +411,7 @@
     </script>
 
     {{ 'scrolling-style.css' | asset_url | stylesheet_tag }}
+    {{ 'base.css' | asset_url | stylesheet_tag }}
   </head>
 
   <body>
@@ -472,6 +482,15 @@
             BUYNOWBUYNOWBUYNOWBUYNOW
           </div>
         </section>
+        <section>
+          <main
+            id="MainContent"
+            class="content-for-layout focus-none"
+            role="main"
+            tabindex="-1">
+            {{ content_for_layout }}
+          </main>
+        </section>
       </div>
     </div>
 
@@ -482,13 +501,6 @@
     {%- endif -%}
 
 
-    <main
-      id="MainContent"
-      class="content-for-layout focus-none"
-      role="main"
-      tabindex="-1">
-      {{ content_for_layout }}
-    </main>
 
     {% sections 'footer-group' %}
 

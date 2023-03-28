@@ -74,28 +74,6 @@
         "padding_bottom": 48
       }
     },
-    "rich-text-1": {
-      "type": "rich-text",
-      "blocks": {
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>RICH TEXT<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "text"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "inverse",
-        "full_width": true,
-        "padding_top": 52,
-        "padding_bottom": 44
-      }
-    },
     "collage": {
       "type": "collage",
       "settings": {
@@ -199,7 +177,6 @@
   "order": [
     "rich-text",
     "featured-product",
-    "rich-text-1",
     "collage",
     "multicolumn-1",
     "multicolumn-2",

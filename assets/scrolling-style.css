@@ -79,7 +79,7 @@
   padding-bottom: 1rem;
 }
 
-.build .build.demo-text .text {
+.build .demo-text .text {
   font-size: clamp(8rem, 15vw, 16rem);
   line-height: 1;
   font-weight: 900;

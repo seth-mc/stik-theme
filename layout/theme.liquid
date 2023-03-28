@@ -458,7 +458,7 @@
         <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
         <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
         {{ 'scroll-handler.js' | asset_url | script_tag }}
-        <div style="diaplsy:none;" class='loader df aic jcc'>
+        <div class='loader df aic jcc'>
           <div>
             <h1>Loading</h1>
             <h2 class='loader--text'>0%</h2>
@@ -520,6 +520,15 @@
               BUYNOWBUYNOWBUYNOWBUYNOW
             </div>
           </section>
+          <section class='demo-gallery'>
+            <main
+              id="MainContent"
+              class="content-for-layout focus-none"
+              role="main"
+              tabindex="-1">
+              {{ content_for_layout }}
+            </main>
+          </section>
         </div>
       </div>
     </div>
@@ -531,13 +540,6 @@
     {%- endif -%}
 
 
-    <main
-      id="MainContent"
-      class="content-for-layout focus-none"
-      role="main"
-      tabindex="-1">
-      {{ content_for_layout }}
-    </main>
 
     {% sections 'footer-group' %}
 
